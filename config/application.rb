@@ -23,9 +23,9 @@ module QuotesFromCollege
     config.action_controller.include_all_helpers = false
 
     social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
-    CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(social_keys)))[Rails.env]
+    CONFIG = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read(social_keys)).result))[Rails.env]
     CONFIG.each do |k,v|
-      ENV[k.upcase] ||= v
+      ENV[k.upcase] ||= v.to_s
     end
 
   end

@@ -25,7 +25,7 @@ function get_posts(page_num, post_params){
 	post_params['page_num'] = page_num;
 
 	$.ajax({
-	    type: 'POST',
+	    type: 'GET',
 	    dataType: 'html',
 	    url: '/posts/post_loader',
 	    data: post_params,

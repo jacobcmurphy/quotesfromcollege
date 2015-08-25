@@ -12,14 +12,12 @@ QuotesFromCollege::Application.routes.draw do
     collection do
       get 'index'
       get 'vote'
-      get 'infinite_scroll'
       get 'search'
       get 'bestof'
-
+      get 'post_loader'
       post 'create'
       post 'vote_up'
       post 'vote_down'
-      post 'post_loader'
     end
   end
 

@@ -102,6 +102,7 @@ private
   def find_posts
     per_page = 15
     page_num = params[:page_num].to_i
+    page_num = page_num < 1 ? 1 : page_num
 
     # multiple assignments of @posts essentially works as chaining .where() since .where() is not immediately evaluated/queried
     @posts = Post.all.with_associated # all posts
