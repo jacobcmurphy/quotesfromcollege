@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quotes From College | Funny Quotes Overheard at College</title>
+
+  <meta name = 'viewport' id = 'viewport_device'>
+  <% if content_for? :head %>
+    <%= yield :head %>
+  <% end %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Graduate' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= Gon::Base.render_data %>
+</head>
+<body>
+  <div class='navbar navbar-default navbar-fixed-top'>
+    <div class='container'>
+      <div class='navbar-header'>
+        <a href=<%= root_url %> class='navbar-brand'>Quotes From College</a>
+        <button class='navbar-toggle' type='button' data-toggle='collapse' data-target='#navbar-main'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+      </div>
+      <div class='navbar-collapse collapse' id='navbar-main'>
+        <ul class='nav navbar-nav'>
+          <li> <%= link_to 'Vote', '/posts/vote' %> </li>
+          <li>
+          <a data-toggle='modal' data-target='#submitModal'>Submit</a>
+          </li>
+          <li class='dropdown'>
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Best Of <b class='caret'></b></a>
+            <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>
+              <li><a href='/posts/bestof/?limit=week'>This Week</a></li>
+              <li><a href='/posts/bestof/?limit=month'>This Month</a></li>
+              <li><a href='/posts/bestof/?limit=ever'>All Time</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class='nav navbar-nav navbar-right'>
+          <% if user_signed_in? %>
+            <% name = current_user.name || 'Account' %>
+            <li><%= link_to name, current_user %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path %></li>
+          <% else %>
+            <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='container'>
+   <div class='page-header' id='banner'>
+   <br><br>
+    <div class='row'>
+      <div id='contents' class='col-md-8'>
+      <%= yield %>
+      </div>
+
+
+    <div id='sidebar' class='col-md-4'>
+      <h3> See quotes by college:</h3>
+      <%= render partial: '/layouts/state_select' %>
+
+      <br>
+      <br>
+
+    </div>
+  </div>
+</div>
+<br>
+
+
+<!-- Modal -->
+<div class='modal fade' id='submitModal' tabindex='-1' role='dialog' aria-labelledby='submitModalLabel' aria-hidden='true'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+        <h4 class='modal-title' id='submitModalLabel'>Submit a Quote</h4>
+      </div>
+      <div class='modal-body'>
+        <%= form_for Post.new, url: '/posts/create' do |f| %>
+          <div class='form-group'>
+            <%= f.label 'What did you hear?' %>
+            <%= f.text_area :text, class: 'form-control', rows: 5, placeholder: 'Enter your quote here.' %>
+            <br>
+            <%= f.label 'Where was this heard?' %>
+            <%= render partial: '/layouts/state_select' %>
+            <br>
+            <%= f.check_box :school_specific %> School specific post
+          </div>
+          <%= f.submit 'Submit', class: 'btn btn-success' %>
+        <% end %>
+      </div>
+      <div class='modal-footer'>
+        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+ if(navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/IEMobile/i)){
+        $('#viewport_device').attr('content', 'initial-scale = 0.75');
+    }
+    else if(navigator.userAgent.match(/iPad/i)){
+        $('#viewport_device').attr('content', 'initial-scale = 1.00');
+    }
+</script>
+<% if content_for? :deferred_content %>
+  <%= yield :deferred_content %>
+<% end %>
+</html>

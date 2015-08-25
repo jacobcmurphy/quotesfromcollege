@@ -1,0 +1,13 @@
+<p id='notice'><%= notice %></p>
+
+<% if @user.name %>
+	<p><h3>Name: <%= @user.name %></h3></p>
+<% end %>
+
+<% if @can_edit %>
+	<%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>
+<hr>
+
+<%= javascript_include_tag 'infinite_scroll' %>
+

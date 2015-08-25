@@ -1,0 +1,23 @@
+<div id='state-selector' class='form-group'>
+<%= select_tag( 'states', options_for_select(states), prompt: 'Pick a college state', class: 'state-drop-down form-control' ) %>
+</div>
+
+<div id='school-selector'>
+</div>
+
+
+<script>
+	$('.state-drop-down').change(function() {
+		var s = $(this).val();
+		var parent = $(this).parent().parent();
+	   
+	    $.ajax({
+		    type: 'POST',
+		    url: '/layouts/college_select',
+		    data: { state: s },
+		    success: function(data) {
+	    		parent.find('#school-selector').html(data);
+		    }
+		});
+	});
+</script>

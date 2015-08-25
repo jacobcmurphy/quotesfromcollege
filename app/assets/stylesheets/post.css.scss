@@ -1,0 +1,40 @@
+// Place all the styles related to the Post controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.panel a{
+	color: #900;
+}
+
+.panel-heading{
+	height: 40px !important;
+	background: #ececec !important;
+}
+
+.panel-heading > * {
+	padding-right: 20px;
+}
+
+
+.post_votes button{
+	border: 0px;
+	background: none;
+}
+
+.panel-body{
+	padding: 10px;
+}
+
+.post-footer{
+	font-style: italic;
+}
+
+.post-social-buttons{
+	margin: 5px;
+}
+
+.post-footer, .post-social-buttons  {
+	margin-left: 10px;
+}
+

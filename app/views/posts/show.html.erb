@@ -1,0 +1,31 @@
+<% content_for :head do %>
+	<meta property='og:title' content='<%= @posts.first.text %>'>
+	<meta property='og:image' content='http://www.quotesfromcollege.com/favicon.ico'>
+<% end %>
+
+<% if @removed %>
+	<h2>This post doesn't exist.</h2>
+	<br>
+	But feel free to enjoy some other <%= link_to 'posts', root_url %>!
+<% else %>
+
+	<% if @comments_allowed %>
+		<div id='fb-root'></div>
+		<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = '//connect.facebook.net/en_US/all.js#xfbml=1';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+	<% end %>
+
+
+	<%= render partial: 'post_loader' %>
+
+	<% if @comments_allowed %>
+		<div class='fb-comments' data-href='<%= request.original_url %>' data-numposts='7' data-colorscheme='light'></div>
+	<% end %>
+<% end %>

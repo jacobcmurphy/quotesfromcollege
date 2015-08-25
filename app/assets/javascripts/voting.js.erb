@@ -1,0 +1,35 @@
+// START VOTING CODE
+function vote_up(id){
+	$.ajax({
+	    type: 'POST',
+	    url: '/posts/vote_up', 
+	    data: { pid: id},
+	    success: function(response) {
+	    	var oldVal = parseInt( $('#vu_'+id).find('.val').text() );
+	    	var newVal = oldVal + 1;
+	    	var str = '<button> <%= image_tag('thumbsUp.png') %> '+newVal+'</button>';
+    		$('#vu_'+id).fadeOut(300, function() {
+				$(this).html(str)
+    		}).fadeIn(300);
+	    }
+	});
+};
+
+
+function vote_down(id){
+
+	$.ajax({
+	    type: 'POST',  
+	    url: '/posts/vote_down', 
+	    data: { pid: id},
+	    success: function(response) {
+	    	var oldVal = parseInt( $('#vd_'+id).find('.val').text() );
+	    	var newVal = oldVal + 1;
+	    	var str = '<button> <%= image_tag('thumbsDown.png') %>'+newVal+'</button> ';
+    		$('#vd_'+id).fadeOut(300, function() {
+				$(this).html(str)
+    		}).fadeIn(300);
+	    }
+	});
+};
+// END VOTING CODE

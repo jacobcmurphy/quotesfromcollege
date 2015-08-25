@@ -1,0 +1,1 @@
+function get_posts(o,t){t.page_num=o,$.ajax({type:"POST",dataType:"html",url:"/posts/post_loader",data:t,success:function(o){$("#contents").append(o)},error:function(o,t,n){console.log(n)}})}var page_num=1;get_posts(1,gon.post_params),$(window).scroll(function(){$(window).scrollTop()>=$(document).height()-$(window).height()-10&&(page_num+=1,get_posts(page_num,gon.post_params))});

@@ -1,0 +1,22 @@
+<h1>Add a post</h1>
+
+<%= form_for @post honeypot: true do |f| %>
+  <% if @post.errors.any? %>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@post.errors.count, 'error') %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+  <% end %>
+  Quote:
+  <%= f.text_area :text %><br />
+
+  School:
+  <!-- set @school in the controller by querying the school table -->
+
+  <%= f.select :school, schools %>
+
+  <%= f.submit %>
+<% end %>

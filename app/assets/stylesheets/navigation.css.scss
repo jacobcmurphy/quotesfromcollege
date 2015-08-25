@@ -1,0 +1,35 @@
+.navbar{
+	background:  #900; /* Old browsers */
+	background: -moz-linear-gradient(top,  #900 0%, #6d0019 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #900), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #900 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #900 0%,#6d0019 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #900 0%,#6d0019 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #900 0%,#6d0019 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #900', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+}
+
+.navbar-default .navbar-brand {
+	font-family: 'Lily Script One', cursive !important;
+	font-size: 1.5 em;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand{
+	color: #FFF;
+	text-decoration: none;
+	border-bottom: 1px solid #900;
+}
+
+.navbar-default .navbar-nav > li > a{
+	font-family: 'Graduate', cursive;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-brand:hover{
+	color: #900;
+	background: white;
+	text-decoration: none;
+}
+
+.dropdown-menu > li > a {
+	text-decoration: none;
+}

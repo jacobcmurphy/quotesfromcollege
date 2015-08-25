@@ -1,0 +1,9 @@
+<%= select_tag( 'college_name', options_from_collection_for_select(@schools_in_state, 'name', 'name'), prompt: 'Pick a college', class: 'form-control' ) %>
+
+      
+<script>
+  $('#sidebar').find('#college_name').change(function() {
+    var place = $('#college_name option:selected').text();
+      window.location.href = '/colleges/'+place;
+  });
+</script>
