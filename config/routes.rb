@@ -4,6 +4,8 @@ QuotesFromCollege::Application.routes.draw do
   
   get 'terms', to: 'pages#terms'
   get 'privacy', to: 'pages#privacy'
+  get 'sitemap.xml', to: 'pages#sitemap', format: :xml, as: :sitemap
+  get 'robots.txt', to: 'pages#robots', format: :text, as: :robots
 
   post 'layouts/college_select'
 
@@ -33,8 +35,7 @@ QuotesFromCollege::Application.routes.draw do
   # You can have the root of your site routed with 'root'
   root to: 'posts#index'
 
-
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.
 
