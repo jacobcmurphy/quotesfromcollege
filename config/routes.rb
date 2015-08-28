@@ -1,7 +1,12 @@
 QuotesFromCollege::Application.routes.draw do
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'pages/terms'
+  
+  get 'terms', to: 'pages#terms'
+  get 'privacy', to: 'pages#privacy'
+
   post 'layouts/college_select'
+
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users

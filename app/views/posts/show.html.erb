@@ -2,6 +2,7 @@
 	<meta property='og:title' content='<%= @posts.first.text %>'>
 	<meta property='og:image' content='http://www.quotesfromcollege.com/favicon.ico'>
 <% end %>
+<% content_for :title, "Post #{@posts.first.id} | Quote From College" %>
 
 <% if @removed %>
 	<h2>This post doesn't exist.</h2>

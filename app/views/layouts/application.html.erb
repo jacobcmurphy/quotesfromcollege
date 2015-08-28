@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quotes From College | Funny Quotes Overheard at College</title>
+  <title><%= yield(:title).presence || 'Quotes From College | Funny Quotes Overheard at College' %></title>
 
   <meta name = 'viewport' id = 'viewport_device'>
   <% if content_for? :head %>
