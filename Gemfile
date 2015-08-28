@@ -50,7 +50,7 @@ gem 'gon' # pass Ruby variables to JS
 gem 'honeypot-captcha'
 gem 'loofah-activerecord'
 
-
+gem 'dynamic_sitemaps'
 
 group :production do
   gem 'rails_12factor'

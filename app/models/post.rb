@@ -5,6 +5,8 @@ class Post  < ActiveRecord::Base
 
 	# loofah-activerecord to remove html from post bodies
 	html_fragment :text, scrub: :prune
+
+	scope :approved, -> { where(approved: true) }
 	
 	def self.with_associated
  	   select('posts.*', 'colleges.name AS college_name', 'users.name AS user_name').joins(:college).joins("LEFT OUTER JOIN users ON users.id = posts.user_id")

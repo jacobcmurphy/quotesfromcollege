@@ -10,6 +10,7 @@ capybara-*.html
 /public/system
 /coverage/
 /spec/tmp
+/public/sitemap/*
 **.orig
 TODO.txt
 
