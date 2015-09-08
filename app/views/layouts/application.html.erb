@@ -18,18 +18,18 @@
     <div class='container'>
       <div class='navbar-header'>
         <a href=<%= root_url %> class='navbar-brand'>Quotes From College</a>
+          <ul class="nav navbar-nav pull-left">
+            <li>
+              <a class='navbar-left' data-toggle='modal' data-target='#submitModal'>Submit</a>
+            </li>
+          </ul>
         <button class='navbar-toggle' type='button' data-toggle='collapse' data-target='#navbar-main'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
+          More
         </button>
       </div>
       <div class='navbar-collapse collapse' id='navbar-main'>
         <ul class='nav navbar-nav'>
           <li> <%= link_to 'Vote', '/posts/vote' %> </li>
-          <li>
-          <a data-toggle='modal' data-target='#submitModal'>Submit</a>
-          </li>
           <li class='dropdown'>
             <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Best Of <b class='caret'></b></a>
             <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu1'>
