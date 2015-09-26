@@ -8,7 +8,9 @@ end
 
 sitemap_for Post.approved
 
-sitemap_for College.all
+sitemap_for College.all do |college|
+	url college_url(college)
+end
 
 sitemap_for User.all
 

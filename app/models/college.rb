@@ -1,6 +1,10 @@
 class College  < ActiveRecord::Base
 	has_many :posts
 	has_many :users
+	
+	def to_param
+		name
+	end
 
 	def self.states
 		self.order('state ASC').pluck('DISTINCT state')
