@@ -65,13 +65,10 @@ class PostsController < ApplicationController
   def post_loader
     @posts = find_posts
 
-
-    if(@posts.size > 0)
+    if @posts.present?
       respond_to do |format|
         format.html {render partial: 'post_loader'}
       end
-    else
-      render nothing: true
     end
   end
 

@@ -1,51 +1,57 @@
 <div class='row'>
+<% if @posts.present? %>
+	<% @posts.each do |post| %>
+		<% name = post.user_name.presence || 'someone' %>
+		<% school = (post.college_name.nil?) ? 'college' : post.college_name %>
 
-<% @posts.each do |post| %>
-	<% name = post.user_name.presence || 'someone' %>
-	<% school = (post.college_name.nil?) ? 'college' : post.college_name %>
-
-	<div class='panel panel-default post'>
-		<div class='panel-heading'>
-			<span class='post_date'><%= post.created_at.strftime('%B %d') %></span>
-			<span class='post_votes'>
-				<span id='vu_<%= post.id %>' class='vote_up'>
-					<button onclick='vote_up(<%= post.id %>)'>
-						<%= image_tag('thumbsUp.png') %> <span class='val'><%= post.votes_up %></span>
-					</button>
+		<div class='panel panel-default post'>
+			<div class='panel-heading'>
+				<span class='post_date'><%= post.created_at.strftime('%B %d') %></span>
+				<span class='post_votes'>
+					<span id='vu_<%= post.id %>' class='vote_up'>
+						<button onclick='vote_up(<%= post.id %>)'>
+							<%= image_tag('thumbsUp.png') %> <span class='val'><%= post.votes_up %></span>
+						</button>
+					</span>
+					<span id='vd_<%= post.id %>' class='vote_down'>
+						<button onclick='vote_down(<%= post.id %>)'> 
+							<%= image_tag('thumbsDown.png') %> <span class='val'><%= post.votes_down %></span>
+						</button>
+					</span>
 				</span>
-				<span id='vd_<%= post.id %>' class='vote_down'>
-					<button onclick='vote_down(<%= post.id %>)'> 
-						<%= image_tag('thumbsDown.png') %> <span class='val'><%= post.votes_down %></span>
-					</button>
-				</span>
-			</span>
 
-			<% if post.approved %>
-				<span class='post_comments'><%= link_to 'Comments', post %></span>
-			<% else %>
-				<%= link_to 'Share', post %>
-			<% end %>
-		</div>
-		<div class='panel-body'> <%= simple_format(post.text) %></div>
-		<div class='post-footer'>Heard by 
-			<% if name == 'someone' %>
-				<%= name %>
-			<% else %>
-				<%= link_to name, user_path(post.user_id) %>
-			<% end %>
-			
-			at 
-			
-			<% if school != 'college' %>
-				<%= link_to school, '/colleges/'+school %>
-			<% else %>
-				<%= school %>
-			<% end %>
-		</div>
+				<% if post.approved %>
+					<span class='post_comments'><%= link_to 'Comments', post %></span>
+				<% else %>
+					<%= link_to 'Share', post %>
+				<% end %>
+			</div>
+			<div class='panel-body'> <%= simple_format(post.text) %></div>
+			<div class='post-footer'>Heard by 
+				<% if name == 'someone' %>
+					<%= name %>
+				<% else %>
+					<%= link_to name, user_path(post.user_id) %>
+				<% end %>
+				
+				at 
+				
+				<% if school != 'college' %>
+					<%= link_to school, '/colleges/'+school %>
+				<% else %>
+					<%= school %>
+				<% end %>
+			</div>
 
-		<div class='post-social-buttons'>
-		<%= social_share_button_tag(post.text, url: request.host_with_port+url_for(post) )%>
+			<div class='post-social-buttons'>
+				<%= social_share_button_tag(post.text, url: request.host_with_port+url_for(post) )%>
+			</div>
 		</div>
+	<% end %>
+<% else %>
+	<div class='no_more_posts'>
+		<div>No more posts found :( </div>
+		<div> <a data-toggle='modal' data-target='#submitModal'>Submit a quote</a> so there are more to read!</div>
 	</div>
 <% end %>
 
