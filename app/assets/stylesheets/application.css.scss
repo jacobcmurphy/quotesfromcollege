@@ -34,3 +34,20 @@ body{
 		color: #990000;
 	}
 }
+
+
+.school-suggesstion-box{
+	display: none;
+}
+.school-name {
+	background-color: #ffffcc;
+	border-width: 1px 0px;
+	border-color: #fff;
+	border-style: solid;
+	padding: 5px;
+
+	&:hover {
+		cursor: pointer;
+		color: #990000;
+	}
+}

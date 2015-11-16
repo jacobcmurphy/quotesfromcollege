@@ -12,4 +12,13 @@ class CollegesController < ApplicationController
 			school: params[:id]
 		}
 	end
+
+	def names
+		name = params[:name]
+		names = name ? College.where("lower(name) LIKE ?", "%#{name.downcase}%").pluck(:name) : []
+
+		respond_to do |format|
+	    	format.html { render partial: 'names', locals: { names: names } }
+		end
+	end
 end

@@ -9,9 +9,9 @@
   <% end %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href='http://fonts.googleapis.com/css?family=Lily+Script+One|Graduate' rel='stylesheet' type='text/css'>
+  <%= Gon::Base.render_data %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= Gon::Base.render_data %>
 </head>
 <body>
   <div class='navbar navbar-default navbar-fixed-top'>
@@ -63,13 +63,20 @@
       </div>
 
 
+    <script>
+      $(document).ready(function(){
+        $('body').on('click', '#sidebar .school-name', function () {
+          var school = $(this).html().trim();
+          school =  encodeURIComponent(school);
+          window.location.href = '/colleges/'+school;
+        });
+      });
+    </script>
     <div id='sidebar' class='col-md-4'>
       <h3> See quotes by college:</h3>
-      <%= render partial: '/layouts/state_select' %>
-
+      <%= render partial: '/layouts/school_select' %>
       <br>
       <br>
-
     </div>
   </div>
 </div>
@@ -91,15 +98,12 @@
             <%= f.text_area :text, class: 'form-control', rows: 5, placeholder: 'Enter your quote here.' %>
             <br>
             <%= f.label 'Where was this heard?' %>
-            <%= render partial: '/layouts/state_select' %>
+            <%= render partial: '/layouts/school_select' %>
             <br>
             <%= f.check_box :school_specific %> School specific post
           </div>
           <%= f.submit 'Submit', class: 'btn btn-success' %>
         <% end %>
-      </div>
-      <div class='modal-footer'>
-        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
       </div>
     </div>
   </div>

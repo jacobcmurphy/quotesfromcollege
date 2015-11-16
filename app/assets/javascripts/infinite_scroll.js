@@ -2,7 +2,7 @@
 
 // IMPORTANT: Currently, this will insert duplicates 
 // if more posts are submitted while scrolling.
-// Instead of using page_num, switch to an date based system
+// Instead of using page_num, switch to a date based system
 // where max_date is increased after each set of posts are inserted
 // then query should only go for posts with created_at > max_date
 

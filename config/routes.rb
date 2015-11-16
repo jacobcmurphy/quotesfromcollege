@@ -7,13 +7,14 @@ QuotesFromCollege::Application.routes.draw do
   get 'sitemap.xml', to: 'pages#sitemap', format: :xml, as: :sitemap
   get 'robots.txt', to: 'pages#robots', format: :text, as: :robots
 
-  post 'layouts/college_select'
-
-
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users
 
-  resources :colleges, only: [:show]
+  resources :colleges, only: [:show] do
+    collection do
+      get 'names'
+    end
+  end
 
   resources :posts, only: [:create, :show, :destroy] do
     collection do

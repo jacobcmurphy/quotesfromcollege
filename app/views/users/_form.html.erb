@@ -4,7 +4,7 @@
     <%= f.text_field :name, class: 'form-control', required: true, autofocus: true %>
     <% if @user.college.blank? %>
       <%= f.label 'Pick a college' %>
-      <%= render partial: '/layouts/state_select' %>
+      <%= render partial: '/layouts/school_select' %>
     <% else %>
       <br />
       <%= f.label :college %>: <%= @user.college.name %>
