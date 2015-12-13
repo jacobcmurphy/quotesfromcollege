@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def create
       uid =  (user_signed_in?) ? current_user.id : 0
-      college_id = College.find_by_name(params[:college_name]).try(:id)
+      college_id = College.find_by(name: params[:college_name]).try(:id)
   	  post = Post.create(user_id: uid, text: params[:post][:text], college_id: college_id, 
         school_specific: ( params[:post][:school_specific].to_i == 1 ), votes_up: 0, votes_down: 0, approved: false)
 
@@ -103,7 +103,7 @@ private
 
     # multiple assignments of @posts essentially works as chaining .where() since .where() is not immediately evaluated/queried
     @posts = Post.all.with_associated # all posts
-    @posts = @posts.where( school_specific: false ) unless user_signed_in? and params.has_key?(:specific) and params[:specific] == current_user.try(:college).try(:name)
+    @posts = @posts.where( school_specific: false ) unless user_signed_in? && params.has_key?(:specific) && params[:specific] == current_user.try(:college).try(:name)
     @posts = @posts.where( approved: params[:approved] ) if params.has_key?(:approved) # for main page: approved=true; vote page: approved=false
     @posts = @posts.where( ["posts.created_at > ? AND approved = TRUE", params[:limit] ] ) if params.has_key? :limit # for bestof page
     @posts = @posts.where( user_id: params[:uid] ) if params.has_key? :uid # for user pages

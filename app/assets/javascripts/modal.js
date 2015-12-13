@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $('.new_post .btn-success').prop('disabled', true);
+
   $('.school-selector').keyup(function(){
     var $this =  $(this)
     var name = $this.val();
@@ -18,6 +20,7 @@ $(document).ready(function(){
 
   $('.school-selection').on('click', '.school-name', function () {
     var $this = $(this);
+    $('.new_post .btn-success').prop('disabled', false);
     var school = $this.html().trim();
     $this.closest('.school-selection').find('.school-selector').val(school);
     $this.closest('.school-suggesstion-box').slideUp('fast', function(){

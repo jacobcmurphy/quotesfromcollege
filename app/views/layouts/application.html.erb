@@ -97,10 +97,10 @@
             <%= f.label 'What did you hear?' %>
             <%= f.text_area :text, class: 'form-control', rows: 5, placeholder: 'Enter your quote here.' %>
             <br>
-            <%= f.label 'Where was this heard?' %>
+            <%= f.label 'Which college did you hear this at?' %>
             <%= render partial: '/layouts/school_select' %>
             <br>
-            <%= f.check_box :school_specific %> School specific post
+            <%= f.check_box :school_specific %> Only people at this school will get it
           </div>
           <%= f.submit 'Submit', class: 'btn btn-success' %>
         <% end %>
