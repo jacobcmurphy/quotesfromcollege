@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def honeypot_fields
   	{
-  		bot_stop: 'Stop bots from submitting.',
+  		pooh: 'Oh bother',
   		seems_legit: 'No spam castles here.'
   	}
   end
