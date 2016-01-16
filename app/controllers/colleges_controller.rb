@@ -6,11 +6,7 @@ class CollegesController < ApplicationController
 			url: college_url(@college),
 			description: "Come and read the funny and ridiculous quotes overhead at #{@college.name}."
 		}
-		gon.post_params = {
-			approved: true,
-			order: 'posts.created_at DESC',
-			school: params[:id]
-		}
+    session[:posts] = {approved: true, school: @college.name}
 	end
 
 	def names

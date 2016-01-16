@@ -17,12 +17,13 @@ unless  Rails.env.production?
 	puts 'Seeding posts'
 	100.times{
 		txt = base.to_s << ' -- ' << ('a'..'z').to_a.shuffle.join
-		acc = [true, false].sample
+		approved = [true, false].sample
 		down = Random.new.rand(1..100)
-		up = (acc) ? down + 20 : Random.new.rand(1..down)
+    up_votes = Random.new.rand(1..down)
+		up = approved ? down + up_votes + 20 : up_votes
 		specific = [true, false].sample
 
-		u.posts.create(id: base, text: txt, votes_up: up, votes_down: down, approved: acc, college_id: brandeis.id, school_specific: specific, created_at: Time.now, updated_at: Time.now)
+		u.posts.create(id: base, text: txt, votes_up: up, votes_down: down, approved: approved, college_id: brandeis.id, school_specific: specific, created_at: Time.now, updated_at: Time.now)
 
 		base += 1
 	}

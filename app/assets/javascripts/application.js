@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require turbolinks // Don't want since it causes issues
 //
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require turbolinks
 //= require social-share-button
 //= require ahoy
+//= require_tree .

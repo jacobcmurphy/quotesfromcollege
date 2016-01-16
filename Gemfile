@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks' # causes trouble with infinite_scroll.js
+gem 'turbolinks' # causes trouble with infinite_scroll.js
 
 gem 'devise'
 gem 'twitter'
@@ -44,7 +44,6 @@ gem 'social-share-button'
 gem 'rails_admin'
 gem 'simple_abs'
 gem 'ahoy_matey' # event tracking
-gem 'gon' # pass Ruby variables to JS
 
 # for secuirty/anti-spam
 gem 'honeypot-captcha'

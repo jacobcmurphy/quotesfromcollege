@@ -86,11 +86,6 @@ GEM
     geocoder (1.2.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    gon (6.0.1)
-      actionpack (>= 3.0)
-      json
-      multi_json
-      request_store (>= 1.0)
     haml (4.0.7)
       tilt
     hashie (3.4.2)
@@ -272,6 +267,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    turbolinks (2.5.3)
+      coffee-rails
     twitter (5.14.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -304,7 +301,6 @@ DEPENDENCIES
   database_cleaner
   devise
   dynamic_sitemaps
-  gon
   honeypot-captcha
   jquery-rails
   json
@@ -331,6 +327,7 @@ DEPENDENCIES
   simple_abs
   social-share-button
   taps
+  turbolinks
   twitter
   uglifier (>= 1.3.0)
 

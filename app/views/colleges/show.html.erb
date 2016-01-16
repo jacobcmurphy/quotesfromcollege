@@ -1,4 +1,6 @@
 <% metadata  @meta_hash%>
 <h1 class='page_title'>Quotes Overheard at <%= @college.name %></h1>
-
-<%= javascript_include_tag 'infinite_scroll' %>
+<script>
+  infiniteScroller.addScrollWatcher();
+  infiniteScroller.getPosts();
+</script>
