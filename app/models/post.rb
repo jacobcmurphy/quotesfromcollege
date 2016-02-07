@@ -13,7 +13,7 @@ class Post  < ActiveRecord::Base
  	end
 
   def self.visible_to_user(user)
-    if user.present?
+    if user.present? && user.college.present?
       where(['school_specific = false OR (school_specific = true AND colleges.name = ?)', user.college.name])
     else
       where(school_specific: false)
