@@ -6,7 +6,7 @@ class CollegesController < ApplicationController
 			url: college_url(@college),
 			description: "Come and read the funny and ridiculous quotes overhead at #{@college.name}."
 		}
-    session[:posts] = {approved: true, school: @college.name}
+    @posts = Post.where(college_id: @college.id, approved: true).order('created_at DESC').page(params[:page_number])
 	end
 
 	def names

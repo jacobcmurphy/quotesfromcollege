@@ -50,6 +50,7 @@ gem 'honeypot-captcha'
 gem 'loofah-activerecord'
 
 gem 'dynamic_sitemaps'
+gem 'will_paginate'
 
 group :production do
   gem 'rails_12factor'
