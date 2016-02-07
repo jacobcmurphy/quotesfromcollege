@@ -37,3 +37,20 @@ RailsAdmin.config do |config|
     end
   end
 end
+
+#
+# Monkey patch to remove default_scope
+# fixes an issue with Post's default_scope
+#
+require 'rails_admin/adapters/active_record'
+module RailsAdmin::Adapters::ActiveRecord
+  def get(id)
+    return unless object = scoped.where(primary_key => id).first
+    AbstractObject.new object
+  end
+  def scoped
+    model.unscoped
+  end
+end
+
+
