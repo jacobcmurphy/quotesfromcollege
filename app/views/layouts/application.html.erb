@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title).presence || 'Quotes From College | Funny Quotes Overheard at College' %></title>
+  <title><%= yield(:title).presence || 'Heard In College | Funny Quotes Overheard at College' %></title>
 
   <meta name = 'viewport' id = 'viewport_device'>
   <% if content_for? :head %>
@@ -16,7 +16,7 @@
   <div class='navbar navbar-default navbar-fixed-top'>
     <div class='container'>
       <div class='navbar-header'>
-        <a href=<%= root_url %> class='navbar-brand'>Quotes From College</a>
+        <a href=<%= root_url %> class='navbar-brand'>Heard In College</a>
           <ul class="nav navbar-nav pull-left">
             <li>
               <a class='navbar-left' data-toggle='modal' data-target='#submitModal'>Submit</a>

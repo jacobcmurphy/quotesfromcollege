@@ -1,2 +1,2 @@
 Property of Jacob Murphy
-For quotesfromcollege.com
+For heardinollege.com
