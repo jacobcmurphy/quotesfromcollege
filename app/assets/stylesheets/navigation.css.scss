@@ -29,8 +29,10 @@ $dark-red: #900;
 }
 
 .navbar-brand {
-	font-family: 'Lily Script One', cursive !important;
+	font-family: 'Graduate' !important;
+  text-transform: uppercase;
 	font-size: 1.5 em;
+  font-weight: bold;
 }
 
 /* taken from http://mislav.github.io/will_paginate/pagination.css */
