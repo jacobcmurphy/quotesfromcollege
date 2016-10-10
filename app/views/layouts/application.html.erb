@@ -94,7 +94,7 @@
         <h4 class='modal-title' id='submitModalLabel'>Submit a Quote</h4>
       </div>
       <div class='modal-body'>
-        <%= form_for Post.new, url: '/posts/create', html: {honeypot: true} do |f| %>
+        <%= form_for Post.new, url: '/posts', html: {honeypot: true} do |f| %>
           <div class='form-group'>
             <%= f.label 'What did you hear?' %>
             <%= f.text_area :text, class: 'form-control', rows: 5, placeholder: 'Enter your quote here.' %>

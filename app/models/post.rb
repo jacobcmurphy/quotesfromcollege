@@ -1,7 +1,8 @@
 class Post  < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :college
-	validates_presence_of :college
+	validates :college, presence: true
+	validates :text, presence: true
 
 	# loofah-activerecord to remove html from post bodies
 	html_fragment :text, scrub: :prune

@@ -1,6 +1,5 @@
-<h1>Add a post</h1>
+<%= form_for @post, html: {honeypot: true} do |f| %>
 
-<%= form_for @post honeypot: true do |f| %>
   <% if @post.errors.any? %>
     <div id='error_explanation'>
       <h2><%= pluralize(@post.errors.count, 'error') %> prohibited this post from being saved:</h2>
@@ -9,14 +8,18 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
+    </div>
   <% end %>
-  Quote:
-  <%= f.text_area :text %><br />
 
-  School:
-  <!-- set @school in the controller by querying the school table -->
+  <div class='form-group'>
+    <%= f.label 'What did you hear?' %>
+    <%= f.text_area :text, class: 'form-control', rows: 5, placeholder: 'Enter your quote here.' %>
+    <br><br>
+    <%= f.label 'Which college did you hear this at?' %>
+    <%= select_tag :college_name, options_for_select(College.names.zip(College.names)), prompt: 'Select a college' %>
+    <br><br>
+    <%= f.check_box :school_specific %> Only people at this school will get it
+  </div>
 
-  <%= f.select :school, schools %>
-
-  <%= f.submit %>
+  <%= f.submit 'Submit', class: 'btn btn-success' %>
 <% end %>

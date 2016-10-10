@@ -2,10 +2,10 @@ QuotesFromCollege::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
-  get 'terms', to: 'pages#terms'
-  get 'privacy', to: 'pages#privacy'
+  get 'terms',       to: 'pages#terms'
+  get 'privacy',     to: 'pages#privacy'
   get 'sitemap.xml', to: 'pages#sitemap', format: :xml, as: :sitemap
-  get 'robots.txt', to: 'pages#robots', format: :text, as: :robots
+  get 'robots.txt',  to: 'pages#robots', format: :text, as: :robots
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users
@@ -16,14 +16,11 @@ QuotesFromCollege::Application.routes.draw do
     end
   end
 
-  resources :posts, only: [:create, :show, :destroy] do
+  resources :posts do
     collection do
-      get 'index'
-      get 'vote'
-      get 'search'
-      get 'bestof'
-      get 'post_loader'
-      post 'create'
+      get  'vote'
+      get  'search'
+      get  'bestof'
       post 'vote_up'
       post 'vote_down'
     end

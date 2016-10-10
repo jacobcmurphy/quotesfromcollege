@@ -6,8 +6,16 @@ class College  < ActiveRecord::Base
 		name
 	end
 
+	def self.names
+		Rails.cache.fetch('colleges/name', expires_in: 12.hours) do
+	    	self.order(:name).pluck(:name)
+	    end
+	end
+
 	def self.states
-		self.order('state ASC').pluck('DISTINCT state')
+		Rails.cache.fetch('colleges/states', expires_in: 12.hours) do
+			self.order('state ASC').pluck('DISTINCT state')
+		end
 	end
 
 	def self.in_state(state)

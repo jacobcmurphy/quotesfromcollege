@@ -1,12 +1,20 @@
 class PostsController < ApplicationController
 
+  def new
+    @post = Post.new
+  end
+
   def create
       uid =  (user_signed_in?) ? current_user.id : 0
       college_id = College.find_by(name: params[:college_name]).try(:id)
-  	  post = Post.create(user_id: uid, text: params[:post][:text], college_id: college_id, 
+  	  @post = Post.new(user_id: uid, text: params[:post][:text], college_id: college_id, 
         school_specific: ( params[:post][:school_specific].to_i == 1 ), votes_up: 0, votes_down: 0, approved: false)
 
-      redirect_to post
+      if @post.save
+        redirect_to @post
+      else
+        render :new
+      end
   end
 
   def destroy
@@ -17,7 +25,7 @@ class PostsController < ApplicationController
   end
 
   def vote
-     @posts = Post.visible_to_user(current_user).where(approved: false).page(params[:page]).order('updated_at DESC')
+    @posts = Post.visible_to_user(current_user).where(approved: false).page(params[:page]).order('updated_at DESC')
 
     render :index
   end

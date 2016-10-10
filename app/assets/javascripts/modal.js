@@ -1,11 +1,9 @@
 $(document).ready(function(){
-  $('.new_post .btn-success').prop('disabled', true);
-
   $('.school-selector').keyup(function(){
     var $this =  $(this)
     var name = $this.val();
     var $results = $this.parent().find('.school-suggesstion-box')
-    if(name.length > 3) {
+    if(name.length > 2) {
       $.ajax({
         type: 'GET',
         url: '/colleges/names',
