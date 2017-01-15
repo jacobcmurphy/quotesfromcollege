@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150814020400) do
+ActiveRecord::Schema.define(version: 20170115222147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,16 +58,25 @@ ActiveRecord::Schema.define(version: 20150814020400) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",         default: 0
     t.integer  "college_id"
     t.text     "text"
-    t.integer  "votes_up"
-    t.integer  "votes_down"
-    t.boolean  "approved"
-    t.boolean  "school_specific"
+    t.integer  "votes_up",        default: 0
+    t.integer  "votes_down",      default: 0
+    t.boolean  "approved",        default: false
+    t.boolean  "school_specific", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "from_phone"
   end
+
+  create_table "source_numbers", force: :cascade do |t|
+    t.string  "phone_number"
+    t.integer "college_id"
+  end
+
+  add_index "source_numbers", ["college_id"], name: "index_source_numbers_on_college_id", using: :btree
+  add_index "source_numbers", ["phone_number"], name: "index_source_numbers_on_phone_number", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

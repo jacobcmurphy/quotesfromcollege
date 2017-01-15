@@ -1,6 +1,7 @@
 class College  < ActiveRecord::Base
 	has_many :posts
 	has_many :users
+  has_many :source_numbers
 	
 	def to_param
 		name
