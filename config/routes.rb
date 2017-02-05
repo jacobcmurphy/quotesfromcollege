@@ -26,6 +26,8 @@ QuotesFromCollege::Application.routes.draw do
     end
   end
 
+  post 'sms', to: 'sms#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.
