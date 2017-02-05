@@ -40,7 +40,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
 gem 'social-share-button'
-gem 'twilio-ruby'
+gem 'plivo'
 
 gem 'rails_admin'
 gem 'simple_abs'
