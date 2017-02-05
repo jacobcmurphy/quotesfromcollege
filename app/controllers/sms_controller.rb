@@ -12,9 +12,23 @@ class SmsController < ApplicationController
     raise "No matching source found for #{number}" unless source_number 
 
     post = Post.create(college_id: source_number.college_id, text: params['Text'], from_phone: params['From'])
-    message = "Awesome! Now share what you've overheard #{post_url(post)}"
-    # TODO: return message in response format
+    message = "Got it! Now you can share it with your friends #{post_url(post)}"
+    notify_user_about_post(params['From'], params['To'], message)
 
     render json: { message: message }
+  end
+
+  private
+
+  def notify_user_about_post(to, from, message)
+    plivo = Plivo::RestAPI.new(Rails.application.secrets.plivo_id, Rails.application.secrets.plivo_token)
+
+    params = {
+      'dst' => to,
+      'src' => from,
+      'text' => message
+    }
+
+    plivo.send_message(params)
   end
 end
