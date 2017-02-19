@@ -4,9 +4,6 @@ class Post  < ApplicationRecord
 	validates :college, presence: true
 	validates :text, presence: true
 
-	# loofah-activerecord to remove html from post bodies
-	html_fragment :text, scrub: :prune
-
 	scope :approved, -> { where(approved: true) }
 	
 	def self.default_scope
