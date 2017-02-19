@@ -51,7 +51,7 @@ gem 'will_paginate'
 
 group :production do
   gem 'rails_12factor'
-  gem 'puma'
+  gem 'thin'
 end
 
 group :development, :test do
