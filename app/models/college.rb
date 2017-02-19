@@ -9,8 +9,8 @@ class College  < ApplicationRecord
 
 	def self.names
 		Rails.cache.fetch('colleges/name', expires_in: 12.hours) do
-	    	self.order(:name).pluck(:name)
-	    end
+      self.order(:name).pluck(:name)
+    end
 	end
 
 	def self.states
