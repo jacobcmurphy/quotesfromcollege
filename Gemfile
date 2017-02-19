@@ -1,14 +1,11 @@
 source 'http://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~>5.0'
 
 gem 'pg'
-
-# Use ActiveModel has_secure_password
-#gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
@@ -57,7 +54,11 @@ end
 group :development, :test do
   gem 'taps'
   gem 'pry'
-  #gem 'pry-doc'
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-thin'
 end
 
 
@@ -65,8 +66,3 @@ group :test do
   gem 'database_cleaner' # https://github.com/bmabey/database_cleaner
 end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
