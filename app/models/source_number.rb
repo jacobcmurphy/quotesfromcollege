@@ -1,3 +1,3 @@
-class SourceNumber  < ActiveRecord::Base
+class SourceNumber  < ApplicationRecord
   belongs_to :college
 end

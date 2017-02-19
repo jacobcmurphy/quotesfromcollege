@@ -1,4 +1,4 @@
-class College  < ActiveRecord::Base
+class College  < ApplicationRecord
 	has_many :posts
 	has_many :users
   has_many :source_numbers
