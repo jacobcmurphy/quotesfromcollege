@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '~>5.0'
 
 gem 'pg'
 
@@ -19,7 +19,7 @@ gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 
 # Use jquery as the JavaScript library
@@ -34,7 +34,7 @@ gem 'json'
 gem 'koala'
 gem 'linkedin'
 gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
@@ -62,14 +62,12 @@ end
 
 group :development, :test do
   gem 'taps'
-  gem 'quiet_assets'
   gem 'pry'
   #gem 'pry-doc'
 end
 
 
 group :test do
-  #gem 'cucumber-rails', :require => false # https://github.com/cucumber/cucumber-rails
   gem 'database_cleaner' # https://github.com/bmabey/database_cleaner
   gem 'shoulda-matchers' # https://github.com/thoughtbot/shoulda-matchers
   gem 'launchy'
