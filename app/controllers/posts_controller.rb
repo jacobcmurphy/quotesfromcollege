@@ -5,16 +5,16 @@ class PostsController < ApplicationController
   end
 
   def create
-      uid =  (user_signed_in?) ? current_user.id : 0
-      college_id = College.find_by(name: params[:college_name]).try(:id)
-  	  @post = Post.new(user_id: uid, text: params[:post][:text], college_id: college_id, 
-        school_specific: ( params[:post][:school_specific].to_i == 1 ), votes_up: 0, votes_down: 0, approved: false)
+    uid =  (user_signed_in?) ? current_user.id : 0
+    college_id = College.find_by(name: params[:college_name]).try(:id)
+    @post = Post.new(user_id: uid, text: params[:post][:text], college_id: college_id, 
+      school_specific: ( params[:post][:school_specific].to_i == 1 ), votes_up: 0, votes_down: 0, approved: false)
 
-      if @post.save
-        redirect_to @post
-      else
-        render :new
-      end
+    if @post.save
+      redirect_to @post
+    else
+      render :new
+    end
   end
 
   def destroy

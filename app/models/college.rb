@@ -1,4 +1,4 @@
-class College  < ActiveRecord::Base
+class College  < ApplicationRecord
 	has_many :posts
 	has_many :users
   has_many :source_numbers
@@ -9,8 +9,8 @@ class College  < ActiveRecord::Base
 
 	def self.names
 		Rails.cache.fetch('colleges/name', expires_in: 12.hours) do
-	    	self.order(:name).pluck(:name)
-	    end
+      self.order(:name).pluck(:name)
+    end
 	end
 
 	def self.states
