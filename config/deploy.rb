@@ -11,7 +11,7 @@ set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
 set :rbenv_ruby, '2.4.0'
 set :thin_config_path, -> { "config/thin/#{fetch(:stage)}.yml" }
 set :keep_releases, 5
