@@ -1,4 +1,17 @@
 $(document).ready(function(){
+
+  $('#post-submit-trigger').on('click', function() {
+    $('#submit-modal').slideDown(function() {
+      $('#container').css('opacity', '0.4');
+    });
+  });
+
+  $('#submit-modal .close-modal').on('click', function() {
+    $('#submit-modal').slideUp('fast', function() {
+      $('#container').css('opacity', '1');
+    });
+  });
+
   $('.school-selector').keyup(function(){
     var $this =  $(this)
     var name = $this.val();

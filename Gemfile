@@ -7,8 +7,6 @@ gem 'rails', '~>5.0'
 
 gem 'pg'
 
-# Use SCSS for stylesheets
-gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'autoprefixer-rails'
 

@@ -2,39 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 1.5em;
+  padding-bottom: 1em;
+  font-weight: 300;
+}
 
 .panel a{
 	color: #900;
 }
 
 .panel-heading{
-	height: 40px !important;
-	background: #ececec !important;
+	background: #ececec;
+  border-bottom: 1px solid #ddd;
+  padding: .25em 1em;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .panel-heading > * {
-	padding-right: 20px;
+	padding-right: 1em;
 }
-
 
 .post_votes button{
 	border: 0px;
 	background: none;
+  cursor: pointer;
 }
 
 .panel-body{
-	padding: 10px;
+	padding: .5em 1em;
 }
 
 .post-footer{
 	font-style: italic;
 }
 
-.post-social-buttons{
-	margin: 5px;
+.post-footer, .post-social-buttons  {
+	margin: 0 1em;
+  display: inline;
 }
 
-.post-footer, .post-social-buttons  {
-	margin-left: 10px;
+.post-social-buttons  {
+  float: right;
 }
 

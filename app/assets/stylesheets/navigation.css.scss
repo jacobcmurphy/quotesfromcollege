@@ -1,39 +1,60 @@
 $dark-red: #900;
 
-.navbar {
-	background:  $dark-red; /* Old browsers */
-	background: -moz-linear-gradient(top,  $dark-red 0%, #6d0019 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $dark-red), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  $dark-red 0%,#6d0019 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' $dark-red', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+#navbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: #FFF;
+
+ 	background:  $dark-red; /* Old browsers */
+ 	background: -moz-linear-gradient(top,  $dark-red 0%, #6d0019 100%); /* FF3.6+ */
+ 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $dark-red), color-stop(100%,#6d0019)); /* Chrome,Safari4+ */
+ 	background: -webkit-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* Chrome10+,Safari5.1+ */
+ 	background: -o-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* Opera 11.10+ */
+ 	background: -ms-linear-gradient(top,  $dark-red 0%,#6d0019 100%); /* IE10+ */
+ 	background: linear-gradient(to bottom,  $dark-red 0%,#6d0019 100%); /* W3C */
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' $dark-red', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+
 }
 
-.navbar-default {
-	.navbar-brand, .navbar-toggle, .navbar-nav > .open > a, .navbar-nav > li > a {
-		color: #FFF;
-		text-decoration: none;
-		border: none;
+.nav-element {
+  a {
+    text-decoration: none;
+    color: #FFF;
+  }
 
-		&:hover, &:focus, &:active {
-			color: $dark-red;
-			background: #FFF;
-		}
-	}
+  &:hover, &:hover * {
+    color: $dark-red;
+    background: #FFF;
+  }
 
-	.navbar-toggle, .navbar-nav > li > a {
-		font-family: 'Graduate', cursive;
-	}
+  &:first-child { // logo
+    font-size: 1.15em;
+    font-weight: bold;
+    margin-left: 2em;
+    padding-right: 1.25em;
+  }
+
+  &:last-child {
+    margin-left: auto;
+    margin-right: 2em;
+  }
+
+  padding: .70em;
+  cursor: pointer;
+
+  // for center aligning text inside of the box 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.navbar-brand {
-	font-family: 'Graduate' !important;
-  text-transform: uppercase;
-	font-size: 1.5 em;
-  font-weight: bold;
+.college-font {
+  font-family: 'Graduate', 'Arial';
 }
+
 
 /* taken from http://mislav.github.io/will_paginate/pagination.css */
 .apple_pagination {

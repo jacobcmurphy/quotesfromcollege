@@ -13,38 +13,60 @@
  *= require social-share-button
  */
 
-@import "bootstrap";
-
-body{
-	background: #F9F9F9 !important;
+body {
+  margin: 0;
+	background: #F9F9F9;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333; 
 }
 
-#sidebar{
-	padding-left: 50 px;
+#container {
+  margin: 4em 2em 0 2em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#contents {
+  flex: 4;
+  min-width: 40em;
+}
+
+#sidebar {
+  margin-left: 1em;
+  flex: 2;
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 200;
+    margin-bottom: 0;
+  }
+}
+
+#footer {
+  margin: 4em 2em 0 2em;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+  
+  a {
+    text-decoration: none;
+  }
 }
 
 .page_title {
 	color: #990000;
 }
 
-.no_more_posts {
-	margin: 10px 0 0 0;
-	font-size: 1.5em;
-	a {
-		color: #990000;
-	}
-}
-
-
 .school-suggesstion-box{
 	display: none;
 }
+
 .school-name {
-	background-color: #ffffcc;
+	background-color: #e6e6e6;
 	border-width: 1px 0px;
 	border-color: #fff;
 	border-style: solid;
-	padding: 5px;
+	padding: .5em;
 
 	&:hover {
 		cursor: pointer;
