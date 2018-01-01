@@ -1,0 +1,59 @@
+#submit-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 80%;
+  margin: 5em 10% 0 7%;
+  border: 1px solid #ddd;
+ 	background: #fff;
+  border-radius: 10px;
+}
+
+.modal-header {
+  h3 {
+    display: inline;
+  }
+  padding: 1em;
+	background: #ececec;
+}
+
+.close-modal {
+  float: right;
+	color: #990000;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 1em;
+}
+
+#new_post {
+  label {
+    display: block;
+    font-size: 1.25em;
+  }
+
+  textarea {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 80%;
+  }
+
+  input, textarea {
+    margin-bottom: 1.5em;
+    padding: .5em;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+}
+
+#post-submit-btn {
+  background-color: #990000;
+  color: #FFF;
+  border-radius: 10px;
+  border: 1px solid #990000;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+

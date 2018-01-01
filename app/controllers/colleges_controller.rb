@@ -1,6 +1,7 @@
 class CollegesController < ApplicationController
 	def show
-		@college = College.find_by_name params[:id]
+    name = CGI.unescapeHTML(params[:id])
+		@college = College.find_by_name(name)
 		@meta_hash = {
 			title: "Quotes Overheard at #{@college.name} | Heard In College",
 			url: college_url(@college),

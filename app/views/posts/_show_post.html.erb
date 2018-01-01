@@ -1,7 +1,7 @@
 <% name = post.user_name.presence || 'someone' %>
   <% school = (post.college_name.nil?) ? 'college' : post.college_name %>
 
-  <div class='panel panel-default post'>
+  <div class='panel'>
     <div class='panel-heading'>
       <span class='post_date'><%= post.created_at.strftime('%B %d') %></span>
       <span class='post_votes'>
@@ -24,13 +24,13 @@
       <% end %>
     </div>
     <div class='panel-body'> <%= simple_format(post.text) %></div>
-    <div class='post-footer'>Heard by 
-      <% if name == 'someone' %>
-        <%= name %>
-      <% else %>
-        <%= link_to name, user_path(post.user_id) %>
-      <% end %>
-      
+    <div class='post-footer'>Heard
+      <%# by 
+      <%# <% if name == 'someone' %>
+      <%#   <%= name %>
+      <%# <% else %>
+      <%#   <%= link_to name, user_path(post.user_id) %>
+      <%# <% end %>
       at 
       
       <% if school != 'college' %>
