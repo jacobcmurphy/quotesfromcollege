@@ -28,7 +28,6 @@ body {
 
 #contents {
   flex: 4;
-  min-width: 40em;
 }
 
 #sidebar {
@@ -39,6 +38,11 @@ body {
     font-size: 1.5em;
     font-weight: 200;
     margin-bottom: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  input {
+    width: 50%;
   }
 }
 
