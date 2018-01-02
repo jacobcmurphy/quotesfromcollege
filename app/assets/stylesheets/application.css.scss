@@ -27,13 +27,21 @@ body {
 }
 
 #contents {
-  flex: 4;
-  min-width: 300px;
+  width: 100%;
+  @media screen and (orientation: landscape) {
+    flex: 4;
+  }
 }
 
 #sidebar {
   margin-left: 1em;
-  flex: 2;
+  @media screen and (orientation: landscape) {
+    flex: 2;
+    input {
+      width: 50%;
+    }
+  }
+
 
   h3 {
     font-size: 1.5em;
@@ -42,9 +50,6 @@ body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   }
 
-  input {
-    width: 50%;
-  }
 }
 
 #footer {

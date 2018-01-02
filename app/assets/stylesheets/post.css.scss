@@ -11,7 +11,8 @@
 }
 
 .panel a{
-	color: #900;
+  color: #900;
+  text-decoration: none;
 }
 
 .panel-heading{
@@ -40,6 +41,11 @@
 
 .post-footer{
 	font-style: italic;
+  font-size: .75em;
+
+  a {
+    color: #4d0000;
+  }
 }
 
 .post-footer, .post-social-buttons  {
