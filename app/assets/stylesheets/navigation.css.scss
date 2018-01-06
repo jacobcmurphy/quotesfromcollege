@@ -17,6 +17,7 @@ $dark-red: #900;
  	background: linear-gradient(to bottom,  $dark-red 0%,#6d0019 100%); /* W3C */
  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' $dark-red', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
 
+  z-index: 999;
 }
 
 .nav-element {

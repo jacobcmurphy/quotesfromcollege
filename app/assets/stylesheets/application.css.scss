@@ -24,6 +24,11 @@ body {
   margin: 4em 2em 0 2em;
   display: flex;
   flex-wrap: wrap;
+ 
+  @media screen and (orientation: landscape) {
+    margin: 4em auto;
+    width: 80%;
+ }
 }
 
 #contents {
