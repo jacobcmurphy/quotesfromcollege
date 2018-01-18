@@ -20,6 +20,20 @@ body {
   color: #333333; 
 }
 
+#flash-message {
+  width: 100%;
+  text-align: center;
+}
+
+.flash-notice {
+  padding: 1em;
+  margin-bottom: .5em;
+  background-color: #00a320;
+  color: white;
+  vertical-align: middle;
+  font-size: 1.2em;
+}
+
 #container {
   margin: 4em 2em 0 2em;
   display: flex;

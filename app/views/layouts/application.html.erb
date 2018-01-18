@@ -18,10 +18,13 @@
   </div>
 
   <div id='container'>
-    <div class='page-header' id='banner'>
-    </div>
     <div id='contents'>
-      <%= yield %>
+      <div id='flash-message'>
+        <% flash.each do |key, value| %>
+          <%= content_tag :div, value, class: "flash-#{key}" %>
+        <% end %>
+      </div>
+        <%= yield %>
     </div>
     <div id='sidebar'>
       <h3> See quotes by college:</h3>

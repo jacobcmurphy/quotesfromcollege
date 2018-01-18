@@ -11,6 +11,7 @@ class PostsController < ApplicationController
       school_specific: ( params[:post][:school_specific].to_i == 1 ), votes_up: 0, votes_down: 0, approved: false)
 
     if @post.save
+      flash[:notice] = "<b>Share this with your friends!</b><br />Click an icon at the bottom right of your post".html_safe
       redirect_to @post
     else
       render :new
