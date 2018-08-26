@@ -6,8 +6,6 @@
     <%= yield :head %>
   <% end %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <link href='https://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -59,6 +57,8 @@
 
 <%= yield :deferred_content %>
 
+<link href='https://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <script>
   $(document).ready(function(){
     $('body').on('click', '#sidebar .school-name', function () {

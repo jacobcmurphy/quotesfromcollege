@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   $('#post-submit-trigger').on('click', function() {
     $('#submit-modal').slideDown(function() {
-      $('#container').css('opacity', '0.4');
+      $('#container').css('opacity', '0.1');
     });
   });
 
