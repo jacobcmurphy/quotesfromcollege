@@ -41,7 +41,7 @@ gem 'ahoy_matey' # event tracking
 # for secuirty/anti-spam
 gem 'honeypot-captcha'
 
-gem 'dynamic_sitemaps'
+gem 'sitemap_generator'
 gem 'will_paginate'
 
 group :production do

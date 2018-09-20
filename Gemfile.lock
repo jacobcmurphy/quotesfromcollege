@@ -98,7 +98,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
-    dynamic_sitemaps (2.0.0)
     equalizer (0.0.11)
     errbase (0.0.3)
     erubis (2.7.0)
@@ -274,6 +273,8 @@ GEM
     simple_oauth (0.3.1)
     sinatra (1.0)
       rack (>= 1.0)
+    sitemap_generator (6.0.1)
+      builder (~> 3.0)
     slop (3.6.0)
     social-share-button (0.8.8)
       coffee-rails
@@ -342,7 +343,6 @@ DEPENDENCIES
   coffee-rails
   database_cleaner
   devise
-  dynamic_sitemaps
   honeypot-captcha
   jquery-rails
   json
@@ -360,6 +360,7 @@ DEPENDENCIES
   rails_admin
   sass-rails
   simple_abs
+  sitemap_generator
   social-share-button
   taps
   thin
