@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title).presence || 'Heard In College | Funny Things Overheard in College' %></title>
+  <title><%= yield(:title).presence || 'Heard In College | Funny Things Overheard at College' %></title>
   <% if content_for? :head %>
     <%= yield :head %>
   <% end %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+
+  <!-- Start AdSense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-7947323376544560",
+      enable_page_level_ads: true
+    });
+  </script>
+  <!-- End AdSense -->
+
   <%= csrf_meta_tags %>
 </head>
 <body>
