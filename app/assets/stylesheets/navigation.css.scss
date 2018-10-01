@@ -6,7 +6,6 @@ $dark-red: #900;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 7vh;
   color: #FFF;
 
  	background:  $dark-red; /* Old browsers */
@@ -22,7 +21,13 @@ $dark-red: #900;
 }
 
 .nav-element {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+
+  @media screen and (max-width: 600px) {
+      font-size: 2.5vw;
+      padding: 3vw;
+  }
+
   a {
     text-decoration: none;
     color: #FFF;

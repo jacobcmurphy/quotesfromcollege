@@ -1,11 +1,11 @@
 #submit-modal {
   display: none;
-  position: fixed;
-  top: 0;
+  position: absolute;
   width: 80%;
   margin: 10vh 10% 0 7%;
   border: 1px solid #990000;
- 	background: #fff;
+  background: #fff;
+  overflow-y: auto;
 }
 
 .modal-header {
